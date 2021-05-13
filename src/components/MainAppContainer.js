@@ -4,7 +4,8 @@ import AddPost from "./AddPost";
 import SearchPost from "./SearchPost";
 import { StyleContext } from "../contexts/StyleContext";
 import styled, {keyframes} from "styled-components";
-import UpdatePost from './UpdatePost'
+import UpdatePost from './UpdatePost';
+import { Button } from 'antd';
 
 function MainAppContainer() {
   const { darkMode } = useContext(StyleContext);
@@ -19,7 +20,7 @@ function MainAppContainer() {
         <AddPost />
         <UpdatePost/>
         <SearchPost/>
-        <Button onClick = {()=> setShowAllTeachers(!showAllTeachers)}>{!showAllTeachers ? "Show all Teachers" : "Hide Teachers"}</Button>
+        <Button type="primary" danger onClick = {()=> setShowAllTeachers(!showAllTeachers)}>{!showAllTeachers ? "Show all Teachers" : "Hide Teachers"}</Button>
         {showAllTeachers && <Posts />}
       </div>
     </MainAppContainerStyles>
@@ -29,24 +30,8 @@ function MainAppContainer() {
 export default MainAppContainer;
 
 const Title = styled.h1`
-  color: ${props => props.theme ? "red" : "blue"}
+  color: ${props => props.theme ? "#ff4d4f;" : "blue"}
 `
-
-export const Button = styled.button`
-  padding: 10px 20px;
-  border: 1px transparent solid;
-  outline: none;
-  background-color: red;
-  color: white;
-  font-weight: bolder;
-  font-size: 1rem;
-  margin: 10px 0;
-  &:hover {
-    background-color: white;
-    color: red;
-    border: 1px red solid;
-  }
-`;
 
 const bringApp = keyframes`
   0% {

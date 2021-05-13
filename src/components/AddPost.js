@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import usePost from "../hooks/usePost";
-import { Button } from "./MainAppContainer";
+import { Button } from "antd";
+// import { Button } from "./MainAppContainer";
 
 
 const todayis = new Date()
@@ -96,7 +97,7 @@ function AddPost() {
           autoComplete = "tel"
         />
       
-        <Button type="submit">Submit</Button>
+        <Button htmlType="submit" type = "primary" danger>Submit</Button>
       </form>
     </AddPostContainer>
   );

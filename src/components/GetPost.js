@@ -1,6 +1,7 @@
 import React from "react";
 import usePostQuery from "../hooks/usePostQuery";
-import { Button } from "./MainAppContainer";
+import { Button } from "antd";
+// import { Button } from "./MainAppContainer";
 import { useHistory } from 'react-router-dom'
 
 function GetPost({ id }) {
@@ -8,10 +9,10 @@ function GetPost({ id }) {
   // const {data, isLoading, error} = useQuery(id && ["post", id], onePost)
   const history = useHistory()
 
-  function handleRouting(e) {
+  function handleRouting(id) {
     setTimeout(() => {
       document.body.style.cssText = "transform: translateX(0vw); opacity: 0;";
-      history.push(`/post/${e.target.id}`);
+      history.push(`/post/${id}`);
     }, 1500);
     document.body.style.cssText =
       "transform: translateX(-100vw); transition: transform 1s ease-in-out";
@@ -33,7 +34,7 @@ function GetPost({ id }) {
           <p>
             User Id: {queryOnePost.data.id} - {queryOnePost.data.name}
           </p>
-          <Button id={queryOnePost.data.id} onClick={(e) => handleRouting(e)}>
+          <Button type = "primary" danger onClick={(e) => handleRouting(queryOnePost.data.id)}>
             More...
           </Button>
         </div>

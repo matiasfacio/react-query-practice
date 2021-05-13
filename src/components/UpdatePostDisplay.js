@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import usePostQuery from "../hooks/usePostQuery";
-import { Button } from "./MainAppContainer";
+import { Button } from "antd";
+// import { Button } from "./MainAppContainer";
 import usePostMutation from "../hooks/usePostMutation";
 
 function UpdatePostDisplay({ id, eraseIdPost }) {
@@ -94,7 +95,7 @@ function UpdatePostDisplay({ id, eraseIdPost }) {
             autoComplete="tel"
           />
         </div>
-        <Button>Submit / Close</Button>
+        <Button type = "primary" htmlType = "submit" danger>Submit / Close</Button>
       </Form>
     </div>
   );

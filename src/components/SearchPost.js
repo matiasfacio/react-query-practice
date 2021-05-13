@@ -1,26 +1,26 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import GetPost from "./GetPost";
-import { Button } from "./MainAppContainer";
+import { Button, Input } from "antd";
+import { SearchOutlined } from "@ant-design/icons";
+// import { Button } from "./MainAppContainer";
 
 function SearchPost() {
   const [searchOne, setSearchOne] = useState(null);
-  const [done, setDone] = useState(false)
+  const [done, setDone] = useState(false);
 
   return (
     <SearchPostContainer>
-      <form onSubmit = {e=> {
-        e.preventDefault()
-        setDone(true)
-      }}>
-      <input
-        type="text"
-        min="1"
+      <Input
         placeholder="search user by id"
-        onChange={(e) => e.target.value ? setSearchOne(e.target.value) : setSearchOne(null)} 
+        onChange={(e) => {
+          e.target.value ? setSearchOne(e.target.value) : setSearchOne(null);
+        }}
+        onPressEnter={(e) => {
+          e.target.value ? setSearchOne(e.target.value) : setSearchOne(null);
+          setDone(true);
+        }}
       />
-      <Button type="submit">Search</Button>
-      </form>
       {searchOne !== null && done && <GetPost id={searchOne} />}
     </SearchPostContainer>
   );
@@ -34,4 +34,8 @@ const SearchPostContainer = styled.div`
   justify-content: center;
   align-items: center;
   padding: 50px;
-`
+  width: 100%;
+  input {
+    max-width: 300px;
+  }
+`;

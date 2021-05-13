@@ -4,7 +4,8 @@ import styled, { keyframes } from "styled-components";
 import { useQuery } from "react-query";
 import { onePost } from "../api/api";
 import { StyleContext } from "../contexts/StyleContext";
-import { Button } from "./MainAppContainer";
+import { Button } from "antd";
+// import { Button } from "./MainAppContainer";
 
 const imageFinal = require(`../images/${Math.ceil(Math.random() * 4)}.jpg`);
 
@@ -15,11 +16,11 @@ function DisplayPost() {
   const { darkMode } = useContext(StyleContext);
 
   function handleBack() {
-
     setTimeout(() => {
       history.push("/");
     }, 1000);
-    document.querySelector("#displayContainer").style.cssText = "opacity: 0;transition: all 1s ease-in-out";
+    document.querySelector("#displayContainer").style.cssText =
+      "opacity: 0;transition: all 1s ease-in-out";
     return;
   }
 
@@ -36,17 +37,19 @@ function DisplayPost() {
     );
 
   return (
-    <Container theme={darkMode} id = "displayContainer">
+    <Container theme={darkMode} id="displayContainer">
       <ImageContainer
         theme={darkMode}
         name={{ name: data.name, lastname: data.lastname }}
       >
-        <ButtonBottom
+        <Button
+          type="primary"
+          danger
           onClick={() => handleBack()}
           style={{ padding: "5px 10px" }}
         >
           Back
-        </ButtonBottom>
+        </Button>
       </ImageContainer>
       <Content>
         <Name>
@@ -144,7 +147,8 @@ export const ImageContainer = styled.div`
     position: absolute;
     width: 100px;
     height: 100px;
-    font-size: 7rem;
+    font-size: 6rem;
+    line-height: 1;
     font-weight: bolder;
     color: white;
     right: 5%;
@@ -159,7 +163,7 @@ export const Content = styled.div`
   grid-area: content;
   width: 100%;
   height: 100%;
-  background-color: red;
+  background-color: #ff4d4f;
   color: white;
   padding: 2em;
 `;
@@ -170,6 +174,6 @@ const Name = styled.div`
   font-weight: bolder;
 `;
 
-const ButtonBottom = styled(Button)`
-  margin: 5px;
-`;
+// const ButtonBottom = styled(Button)`
+//   margin: 5px;
+// `;
