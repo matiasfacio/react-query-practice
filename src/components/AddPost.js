@@ -36,7 +36,7 @@ function AddPost() {
   return (
     <AddPostContainer>
     
-      <label>Add Teacher</label>
+      <h2>Add Teacher</h2>
       <form
         onSubmit={(e) => {
           e.preventDefault();

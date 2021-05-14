@@ -5,7 +5,6 @@ import { useQuery } from "react-query";
 import { onePost } from "../api/api";
 import { StyleContext } from "../contexts/StyleContext";
 import { Button } from "antd";
-// import { Button } from "./MainAppContainer";
 
 const imageFinal = require(`../images/${Math.ceil(Math.random() * 4)}.jpg`);
 
@@ -26,7 +25,6 @@ function DisplayPost() {
 
   useEffect(() => {
     document.body.style.cssText = "opacity:1";
-    return;
   });
 
   if (isLoading) return <p>loading...</p>;
@@ -173,7 +171,3 @@ const Name = styled.div`
   text-transform: uppercase;
   font-weight: bolder;
 `;
-
-// const ButtonBottom = styled(Button)`
-//   margin: 5px;
-// `;

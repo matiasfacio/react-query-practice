@@ -11,7 +11,7 @@ function UpdatePost() {
 
   return (
     <UpdatePostContainer>
-      <p>Update Teacher Information</p>
+      <h2>Update Teacher Information</h2>
       <label>Enter Id</label>
       <input
         type="number"

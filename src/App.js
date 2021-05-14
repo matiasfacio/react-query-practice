@@ -4,7 +4,8 @@ import { useContext } from "react";
 import { StyleContext } from "./contexts/StyleContext";
 import styled from "styled-components";
 import Routing from "./components/Routing"
-import { ReactQueryDevtools } from 'react-query/devtools'
+
+// import { ReactQueryDevtools } from 'react-query/devtools'
 
 
 const queryClient = new QueryClient();
@@ -17,7 +18,7 @@ function App() {
       <AppContainer active={darkMode}>
         <Routing/>
       </AppContainer>
-      <ReactQueryDevtools initialIsOpen={false} />
+      {/* <ReactQueryDevtools initialIsOpen={false} /> */}
     </QueryClientProvider>
   );
 }

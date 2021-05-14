@@ -32,7 +32,7 @@ function GetPost({ id }) {
       {queryOnePost.data?.name && (
         <div>
           <p>
-            User Id: {queryOnePost.data.id} - {queryOnePost.data.name}
+            {queryOnePost.data.id} - {queryOnePost.data.name} {queryOnePost.data.lastname}
           </p>
           <Button type = "primary" danger onClick={(e) => handleRouting(queryOnePost.data.id)}>
             More...
