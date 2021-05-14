@@ -12,7 +12,7 @@ function SearchPost() {
   return (
     <SearchPostContainer>
       <Input
-        placeholder="search user by id"
+        placeholder="search teacher by id"
         onChange={(e) => {
           e.target.value ? setSearchOne(e.target.value) : setSearchOne(null);
         }}

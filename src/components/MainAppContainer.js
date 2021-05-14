@@ -24,13 +24,14 @@ function MainAppContainer() {
           <h1>Your Tango Teachers Black & Red List</h1>
         </Title>
         <Hr/>
-        <AddPost />
-        <UpdatePost />
         <SearchPost />
         <Button type="primary" danger onClick={handleShowAllTeachers}>
           {!showAllTeachers ? "Show all Teachers" : "Hide Teachers"}
         </Button>
         {showAllTeachers && <Posts />}
+        <AddPost />
+        <UpdatePost />
+        
       </div>
     </MainAppContainerStyles>
   );
@@ -52,6 +53,7 @@ const Title = styled.div`
   h1 {
     color: ${(props) => (props.theme ? "#ff4d4f;" : "blue")};
     font-weight: bolder;
+    text-transform: uppercase;
   }
 `;
 
