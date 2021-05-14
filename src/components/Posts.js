@@ -3,7 +3,6 @@ import { useQuery } from "react-query";
 import { fetchData } from "../api/api";
 import styled from "styled-components";
 import { useHistory } from "react-router";
-// import { Button } from "./MainAppContainer";
 import { Button } from "antd";
 
 export default function Posts() {

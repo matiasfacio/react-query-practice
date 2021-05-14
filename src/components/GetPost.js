@@ -6,7 +6,6 @@ import { useHistory } from 'react-router-dom'
 
 function GetPost({ id }) {
   const queryOnePost = usePostQuery(id);
-  // const {data, isLoading, error} = useQuery(id && ["post", id], onePost)
   const history = useHistory()
 
   function handleRouting(id) {
